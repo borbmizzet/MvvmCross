@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:viewModels="clr-namespace:Playground.Core.ViewModels;assembly=Playground.Core"
-             x:Class="Playground.Forms.UI.Views.ChildContentView" x:TypeArguments="viewModels:ChildContentViewModel">
+             x:Class="Playground.Forms.UI.Views.ChildContentView" x:TypeArguments="viewModels:ChildContentViewModel"
+                      x:Name="View">
   <ContentView.Content>
       <StackLayout>
           <Label Text="Static Text" />
-          <Label Text="{Binding Test}" />
+          <Label Text="{Binding Test1, StringFormat='{0}, UnnamedView'}"/>
+          <Label Text="{Binding ViewModel.Test1, Source={x:Reference View}}" />
       </StackLayout>
   </ContentView.Content>
 </views:MvxContentView>

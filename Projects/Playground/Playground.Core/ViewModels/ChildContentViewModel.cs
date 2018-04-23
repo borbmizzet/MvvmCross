@@ -5,18 +5,31 @@ namespace Playground.Core.ViewModels
 {
     public class ChildContentViewModel : MvxViewModel
     {
-        private string _test;
+        private string _test1;
 
-        public string Test
+        public string Test1
         {
-            get { return _test; }
-            private set { SetProperty(ref _test, value); }
+            get { return _test1; }
+            private set { SetProperty(ref _test1, value); }
+        }
+
+        private string _test2;
+
+        public string Test2
+        {
+            get { return _test2; }
+            private set { SetProperty(ref _test2, value); }
         }
 
         public override async Task Initialize()
         {
-            Test = "Bound Text";
             await Task.Yield();
+        }
+
+        public void SetText()
+        {
+            Test1 = "Bound Text1";
+            Test2 = "Bound Text2";
         }
     }
 }

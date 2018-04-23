@@ -7,7 +7,7 @@
              x:Class="Playground.Forms.UI.Pages.ParentContentPage" x:TypeArguments="viewModels:ParentContentViewModel">
     <ContentPage.Content>
         <StackLayout>
-            <views:ChildContentView />
+            <views:ChildContentView BindingContext="{Binding ChildViewModel}"/>
         </StackLayout>
     </ContentPage.Content>
 </views1:MvxContentPage>
